@@ -7,13 +7,18 @@ const nextConfig = {
   async redirects() {
     return [
       {
-        source: "/authentication_login_screen",
+        source: "/",
+        destination: "/features/authentication/login_screen",
+        permanent: false,
+      },
+      {
+        source: "/login",
         destination: "/features/authentication/login_screen",
         permanent: false,
       },
 
       {
-        source: "/authentication_signup_screen",
+        source: "/signup",
         destination: "/features/authentication/signup_screen",
         permanent: false,
       },
