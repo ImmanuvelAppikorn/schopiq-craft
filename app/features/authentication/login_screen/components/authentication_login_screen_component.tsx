@@ -42,7 +42,10 @@ export const LoginLayoutField = memo(() => {
           className="w-full border rounded-lg px-3 py-2 mb-4 text-black"
         />
 
-        <button className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800">
+        <button
+          type="button"
+          className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800"
+        >
           Sign In
         </button>
       </div>
