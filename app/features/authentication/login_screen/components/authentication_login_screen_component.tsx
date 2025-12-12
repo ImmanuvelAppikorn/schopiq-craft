@@ -26,14 +26,20 @@ export const LoginLayoutField = memo(() => {
 
   return (
     <div
-      className="min-h-screen w-full bg-center bg-no-repeat flex items-center justify-center"
+      className="min-h-screen w-full bg-center bg-no-repeat flex items-center justify-center relative"
       style={{ backgroundImage: `url(${ASSETS.login_screen.login_bg})` }}
     >
+      {/* Top Left Corner Text */}
+      <div className="absolute top-5 left-5 text-2xl font-bold text-white">
+        schopiqcraft
+      </div>
+
+      {/* Centered Form */}
       <div className="bg-gray-200 backdrop-blur-md p-5 rounded-2xl shadow-xl w-full max-w-md space-y-5">
         <h1 className="text-3xl font-bold mb-4 text-black">Sign In</h1>
 
         <p className="text-gray-600 mb-2">
-          Don’t have an account yet?{" "}
+          Don't have an account yet?{" "}
           <span
             className="text-[#38cb89] cursor-pointer"
             onClick={() => navigate("/features/authentication/signup_screen")}
@@ -53,7 +59,6 @@ export const LoginLayoutField = memo(() => {
     </div>
   );
 });
-
 export const UsernameField = memo(() => {
   const username = authenticationLoginScreenInputModel.useSelector(
     (state) => state.authenticationLoginScreenData.username || ""
@@ -111,6 +116,7 @@ export const CheckField = memo(() => {
   return (
     <div className="flex items-center justify-between">
       <CheckboxAppi
+        key={check} // This forces re-render when check changes
         size="lg"
         defaultChecked={check === "true"}
         onValueChange={(isSelected: boolean) => {

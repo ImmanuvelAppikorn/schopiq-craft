@@ -21,13 +21,13 @@ export const SignupLayoutField = memo(() => {
 
   return (
     <div
-      className="min-h-screen w-full bg-center bg-no-repeat flex items-center justify-center"
+      className="min-h-screen w-full bg-center bg-no-repeat flex items-center justify-center relative"
       style={{ backgroundImage: `url(${ASSETS.signup_screen.signup_bg})` }}
     >
-      {/* Brand name in top left corner */}
-      {/* <div className="absolute top-8 left-8">
-        <h2 className="text-2xl font-bold text-white">schopiqraft</h2>
-      </div> */}
+      {/* Top Left Corner Text */}
+      <div className="absolute top-5 left-5 text-2xl font-bold text-white">
+        schopiqcraft
+      </div>
 
       <div className="bg-gray-200 backdrop-blur-md p-5 rounded-2xl shadow-xl w-full max-w-md space-y-5">
         <h1 className="text-3xl font-bold mb-4 text-black">Sign Up</h1>
@@ -161,6 +161,7 @@ export const AgreementField = memo(() => {
   return (
     <div className="flex items-center justify-between">
       <CheckboxAppi
+        key={agreement} // This forces re-render when check changes
         size="lg"
         defaultChecked={agreement === "true"}
         onValueChange={(isSelected: boolean) => {
