@@ -8,8 +8,9 @@ import {
   onInit,
   onDestroy,
   resetForm,
-  validateForm
+  validateForm,
 } from "./controller/authentication_signup_screen_controller";
+import { SignupLayoutField } from "./components/authentication_signup_screen_component";
 
 export default function Authentication_signup_screenPage() {
   const [errors, setErrors] = useState<string[]>([]);
@@ -23,9 +24,14 @@ export default function Authentication_signup_screenPage() {
   }, []);
 
   return (
-    <div className="flex min-h-screen items-center justify-center p-4">
-      <div className="w-full max-w-md space-y-4">
-        <Form className="space-y-4" onSubmit={(e) => handleAuthentication_signup_screenSubmit(e, setErrors)}>
+    <div className="">
+      <div className="w-full space-y-4">
+        <Form
+          className="space-y-4"
+          onSubmit={(e) =>
+            handleAuthentication_signup_screenSubmit(e, setErrors)
+          }
+        >
           {errors.length > 0 && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
               {errors.map((error, index) => (
@@ -33,10 +39,9 @@ export default function Authentication_signup_screenPage() {
               ))}
             </div>
           )}
-          
-          <div className="flex gap-2">
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => { resetForm(); }}>Reset</button>
+
+          <div className="w-full">
+            <SignupLayoutField />
           </div>
         </Form>
       </div>

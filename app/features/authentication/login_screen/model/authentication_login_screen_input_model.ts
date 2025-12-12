@@ -19,6 +19,8 @@ export const authenticationLoginScreenDataSchema = z.object({
   username: z.string(),
   password: z.string(),
   signInButton: z.string().optional(),
+  check: z.string(),
+  loginButton: z.string().optional(),
 });
 
 
@@ -29,6 +31,8 @@ export const authenticationLoginScreenPersistenceConfig = {
   username: true,
   password: true,
   signInButton: true,
+  check: true,
+  loginButton: true,
 };
 
 

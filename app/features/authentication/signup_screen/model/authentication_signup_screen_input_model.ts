@@ -15,12 +15,26 @@ import { createSchemaBundle } from "@/core/utility";
 // Define the main authentication_signup_screen data schema with persistence flags
 export const authenticationSignupScreenDataSchema = z.object({
   loading: z.boolean().optional(),
+  signupLayout: z.string().optional(),
+  name: z.string(),
+  username: z.string(),
+  email: z.string(),
+  password: z.string(),
+  agreement: z.string(),
+  signupButton: z.string().optional(),
 });
 
 
 // Define persistence configuration for each field
 export const authenticationSignupScreenPersistenceConfig = {
   loading: false,
+  signupLayout: true,
+  name: true,
+  username: true,
+  email: true,
+  password: true,
+  agreement: true,
+  signupButton: true,
 };
 
 
